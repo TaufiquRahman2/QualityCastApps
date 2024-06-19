@@ -4,7 +4,7 @@
 
 **Nama WebApp:** qualitycastapps  
 **Link:** [qualitycastapps.streamlit.app](https://qualitycastapps.streamlit.app/)  
-**Seluruh file pada repository ini diambil dari repository kami sebelumnya. Kami membuat repository ini karena batasan ukuran dalam mengunggah file model.**  
+**Seluruh file pada repository ini diambil dari repository kami sebelumnya. Kami membuat repository ini karena batasan ukuran dalam mengunggah file model dan repository sebelumnya terkena limit.**  
 **Link Repository Sebelumnya:** [QualityCast Repository](https://github.com/TaufiiquRahman/QualityCast.git)
 **Link Repository Sebelumnya:** [QualityCastApp Repository](https://github.com/TaufiiquRahman/QualityCastApp.git)
 
