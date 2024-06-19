@@ -1,7 +1,7 @@
-numpy
-streamlit
-Pillow
-keras
-tensorflow
-matplotlib
-requests
+numpy==1.22.0
+streamlit==1.9.2
+Pillow==9.0.0
+keras==2.8.0
+tensorflow==2.8.0
+matplotlib==3.5.1
+requests==2.26.0
