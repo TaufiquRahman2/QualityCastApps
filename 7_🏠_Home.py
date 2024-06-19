@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from util import classify, set_background
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 import auth_functions
 
@@ -53,9 +53,29 @@ st.markdown(
     """, unsafe_allow_html=True
 )
 
-# -------------------------------------------------------------------------------------------------
-# Main
-# -------------------------------------------------------------------------------------------------
+# Define the cache clearing interval (e.g., every 10 minutes)
+CACHE_CLEAR_INTERVAL = timedelta(minutes=10)
+
+# Initialize session state variables
+if 'last_cache_clear_time' not in st.session_state:
+    st.session_state['last_cache_clear_time'] = datetime.now()
+
+# Function to check if it's time to clear the cache
+def is_cache_expired():
+    return datetime.now() - st.session_state['last_cache_clear_time'] > CACHE_CLEAR_INTERVAL
+
+# Function to clear the cache and update the timestamp
+def clear_cache():
+    st.cache_data.clear()
+    st.cache_resource.clear()
+    st.session_state['last_cache_clear_time'] = datetime.now()
+
+# Clear cache if the interval has expired
+if is_cache_expired():
+    clear_cache()
+
+# Main logic
+
 # Function to check if user is logged in
 def is_user_logged_in():
     return 'user_info' in st.session_state
@@ -189,8 +209,6 @@ else:
 
                     # Display the donut chart
                     st.pyplot(fig)
-
-
 
                     # Save the result to history
                     log = pd.DataFrame([{
